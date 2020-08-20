@@ -383,6 +383,11 @@ describe("util.js", function () {
             assert.deepEqual(new_testy.three, testy.three);
             assert.deepEqual(new_testy.four.d, testy.four.d);
         });
+
+        it("should prevent Object.prototype pollution when extending", function () {
+            qq.extend({}, JSON.parse( "{\"__proto__\": {\"devMode\": true}}" ), true);
+            assert.ok(!("devMode" in {}));
+        });
     }); // extend
 
     describe("indexOf", function () {
