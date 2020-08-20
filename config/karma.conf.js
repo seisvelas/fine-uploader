@@ -5,7 +5,7 @@ module.exports = function(config, options) {
     "use strict";
 
     return config.set({
-        browsers: ["Firefox"],
+        browsers: ["ChromeHeadless"],
         captureTimeout: 60000,
         files: [
             path.resolve("_build/all.fine-uploader.js"),
