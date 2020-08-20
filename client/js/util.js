@@ -444,6 +444,11 @@ var qq = function(element) {
 
     qq.extend = function(first, second, extendNested) {
         qq.each(second, function(prop, val) {
+            // Prevent Object.prototype pollution
+            if (prop === "__proto__") {
+                return;
+            }
+
             if (extendNested && qq.isObject(val)) {
                 if (first[prop] === undefined) {
                     first[prop] = {};
