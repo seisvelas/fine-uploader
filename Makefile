@@ -262,31 +262,31 @@ build-ui-s3-jquery-min: _build
 	$(uglify-min) $(s3-ui-files) -o $(build-out-dir)/s3.fine-uploader.min.js -e window:global --source-map $(build-out-dir)/s3.fine-uploader.min.js.map
 
 build-core-azure: _build
-	$(uglify) $(azure-files) -o $(build-out-dir)/azure.fine-uploader.core.js --source-map $(build-out-dir)/azure.fine-uploader.core.js.map 
+	$(uglify) $(azure-files) -o $(build-out-dir)/azure.fine-uploader.core.js --source-map $(build-out-dir)/azure.fine-uploader.core.js.map
 
 build-core-azure-min: _build
 	$(uglify-min) $(azure-files) -o $(build-out-dir)/azure.fine-uploader.core.min.js -e window:global --source-map $(build-out-dir)/azure.fine-uploader.core.min.js.map
 
 build-ui-azure: _build
-	$(uglify) $(azure-ui-files) -o $(build-out-dir)/azure.fine-uploader.js --source-map $(build-out-dir)/azure.fine-uploader.js.map 
+	$(uglify) $(azure-ui-files) -o $(build-out-dir)/azure.fine-uploader.js --source-map $(build-out-dir)/azure.fine-uploader.js.map
 
 build-ui-azure-min: _build
 	$(uglify-min) $(azure-ui-files) -o $(build-out-dir)/azure.fine-uploader.min.js -e window:global --source-map $(build-out-dir)/azure.fine-uploader.min.js.map
 
 build-ui-azure-jquery: _build
-	$(uglify) $(azure-ui-jquery-files) -o $(build-out-dir)/azure.jquery.fine-uploader.js --source-map $(build-out-dir)/azure.jquery.fine-uploader.js.map 
+	$(uglify) $(azure-ui-jquery-files) -o $(build-out-dir)/azure.jquery.fine-uploader.js --source-map $(build-out-dir)/azure.jquery.fine-uploader.js.map
 
 build-ui-azure-jquery-min: _build
 	$(uglify-min) $(azure-ui-jquery-files) -o $(build-out-dir)/azure.jquery.fine-uploader.min.js -e window:global --source-map $(build-out-dir)/azure.jquery.fine-uploader.min.js.map
 
 build-all-core: _build
-	$(uglify) $(all-core-files) -o $(build-out-dir)/all.fine-uploader.core.js --source-map $(build-out-dir)/all.fine-uploader.core.js.map 
+	$(uglify) $(all-core-files) -o $(build-out-dir)/all.fine-uploader.core.js --source-map $(build-out-dir)/all.fine-uploader.core.js.map
 
 build-all-core-min: _build
 	$(uglify-min) $(all-core-files) -o $(build-out-dir)/all.fine-uploader.core.min.js -e window:global --source-map $(build-out-dir)/all.fine-uploader.core.min.js.map
 
 build-all-ui: _build
-	$(uglify) $(all-files) -o $(build-out-dir)/all.fine-uploader.js --source-map $(build-out-dir)/all.fine-uploader.js.map 
+	$(uglify) $(all-files) -o $(build-out-dir)/all.fine-uploader.js --source-map $(build-out-dir)/all.fine-uploader.js.map
 
 build-all-ui-min: _build
 	$(uglify-min) $(all-files) -o $(build-out-dir)/all.fine-uploader.min.js --source-map $(build-out-dir)/all.fine-uploader.min.js.map
@@ -458,7 +458,7 @@ push-to-npm:
 ifeq ($(simulate), true)
 	@echo not publishing - simulation mode
 else
-	(cd $(pub-dir) ; npm publish)
+	(cd $(pub-dir) ; npm publish --access public)
 endif
 
 publish: \
